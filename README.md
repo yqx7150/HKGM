@@ -10,6 +10,18 @@ Copyright 2022, Department of Electronic Information Engineering, Nanchang Unive
 
 Magnetic resonance imaging serves as an essential tool for clinical diagnosis. However, it suffers from a long acquisition time. The utilization of deep learning, especially the deep generative models, offers aggressive acceleration and better reconstruction in magnetic resonance imaging. Nevertheless, learning the data distribution as prior knowledge and reconstructing the image from limited data remains challenging. In this work, we propose a novel Hankel-k-space generative model (HKGM), which can generate samples from a training set of as little as one k-space data. At the prior learning stage, we first construct a large Hankel matrix from k-space data, then extract multiple structured k- space patches from the large Hankel matrix to capture the internal distribution among different patches. Extracting patches from a Hankel matrix enables the generative model to be learned from redundant and low- rank data space. At the iterative reconstruction stage, it is observed that the desired solution obeys the learned prior knowledge. The intermediate reconstruction solution is updated by taking it as the input of the generative model. The updated result is then alternatively operated by imposing low-rank penalty on its Hankel matrix and data consistency constrain on the measurement data. Experimental results confirmed that the internal statistics of patches within a single k-space data carry enough information for learning a powerful generative model and provide state-of-the-art reconstruction.
 
+## Requirements and Dependencies
+    python==3.7.11
+    Pytorch==1.7.0
+    tensorflow==2.4.0
+    torchvision==0.8.0
+    tensorboard==2.7.0
+    scipy==1.7.3
+    numpy==1.19.5
+    ninja==1.10.2
+    matplotlib==3.5.1
+    jax==0.2.26
+    
 ## Test Demo
 ```bash
 python PCsampling_demo_parallel.py
@@ -35,6 +47,8 @@ The implementation is based on this repository: https://github.com/yang-song/sco
 ## Other Related Projects
   * Diffusion Models for Medical Imaging
 [<font size=5>**[Paper]**</font>](https://github.com/yqx7150/Diffusion-Models-for-Medical-Imaging)   [<font size=5>**[Code]**</font>](https://github.com/yqx7150/Diffusion-Models-for-Medical-Imaging)   [<font size=5>**[PPT]**</font>](https://github.com/yqx7150/HKGM/tree/main/PPT)  
+  * Homotopic Gradients of Generative Density Priors for MR Image Reconstruction  
+[<font size=5>**[Paper]**</font>](https://ieeexplore.ieee.org/abstract/document/9435335)   [<font size=5>**[Code]**</font>](https://github.com/yqx7150/HGGDP)   [<font size=5>**[PPT]**</font>](https://github.com/yqx7150/HGGDP/tree/master/Slide)
   * Multi-Channel and Multi-Model-Based Autoencoding Prior for Grayscale Image Restoration  
 [<font size=5>**[Paper]**</font>](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8782831)  [<font size=5>**[Code]**</font>](https://github.com/yqx7150/MEDAEP)   [<font size=5>**[Slide]**</font>](https://github.com/yqx7150/EDAEPRec/tree/master/Slide)  [<font size=5>**[数学图像联盟会议交流PPT]**</font>](https://github.com/yqx7150/EDAEPRec/tree/master/Slide)
 
