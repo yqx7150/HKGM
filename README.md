@@ -16,13 +16,17 @@ python PCsampling_demo_parallel.py
 ```
 
 ## Checkpoints
-We provide pretrained checkpoints. You can download pretrained models from [Google Drive] (https://drive.google.com/file/d/1DmRTPmc_xYaVO3pX1R_CE0ZpiBRFkCwG/view?usp=sharing)
+We provide pretrained checkpoints. You can download pretrained models from [Google Drive] (https://drive.google.com/file/d/1UMULob7RG70X9ChI1UgwHb6Lt3FB6THC/view?usp=sharing) [Baidu cloud] (https://pan.baidu.com/s/1P1h7FEvz9FuH3ZE6NX2WMA?pwd=jlzu)
 
 ## Graphical representation
 ### Pipeline of the prior learning process and PI reconstruction procedure in HKGM
 <div align="center"><img src="https://github.com/yqx7150/HKGM/blob/main/figure1.png" >  </div>
+
 The training flow chart of HKGM. The training process mainly consists of three steps. Firstly, we construct a large Hankel matrix from k-space data. After that, we extract a lot of redundancy and low-rank patches to generate sufficient data samples. Finally, we feed these training patches to the network to capture the internal distribution at different patches.
+
+
 <div align="center"><img src="https://github.com/yqx7150/HKGM/blob/main/figure2.png" >  </div>
+
 The pipeline of the PI reconstruction procedure in HKGM. The iterative reconstruction process mainly consists of three steps. Firstly, we iteratively reconstruct objects from the trained network using a PC sampler on the input k-space data. After that, we construct Hankel matrix from the output of the network and apply low-rank penalty on it. Finally, we perform data consistency on the k-space data formed reversely from the matrix.
 
 ## Acknowledgement
