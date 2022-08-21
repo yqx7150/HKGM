@@ -20,9 +20,10 @@ We provide pretrained checkpoints. You can download pretrained models from [Goog
 
 ## Graphical representation
 ### Pipeline of the prior learning process and PI reconstruction procedure in HKGM
-<div align="center"><img src="https://github.com/yqx7150/SVD-WKGM/blob/main/Fig-1.png" >  </div>
-Top line: The training flow chart of HKGM. The training process mainly consists of three steps. Firstly, we construct a large Hankel matrix from k-space data. After that, we extract a lot of redundancy and low-rank patches to generate sufficient data samples. Finally, we feed these training patches to the network to capture the internal distribution at different patches.
-Bottom line: The pipeline of the PI reconstruction procedure in HKGM. The iterative reconstruction process mainly consists of three steps. Firstly, we iteratively reconstruct objects from the trained network using a PC sampler on the input k-space data. After that, we construct Hankel matrix from the output of the network and apply low-rank penalty on it. Finally, we perform data consistency on the k-space data formed reversely from the matrix.
+<div align="center"><img src="https://github.com/yqx7150/HKGM/blob/main/figure1.png" >  </div>
+The training flow chart of HKGM. The training process mainly consists of three steps. Firstly, we construct a large Hankel matrix from k-space data. After that, we extract a lot of redundancy and low-rank patches to generate sufficient data samples. Finally, we feed these training patches to the network to capture the internal distribution at different patches.
+<div align="center"><img src="https://github.com/yqx7150/HKGM/blob/main/figure2.png" >  </div>
+The pipeline of the PI reconstruction procedure in HKGM. The iterative reconstruction process mainly consists of three steps. Firstly, we iteratively reconstruct objects from the trained network using a PC sampler on the input k-space data. After that, we construct Hankel matrix from the output of the network and apply low-rank penalty on it. Finally, we perform data consistency on the k-space data formed reversely from the matrix.
 
 ## Acknowledgement
 The implementation is based on this repository: https://github.com/yang-song/score_sde_pytorch.
