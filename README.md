@@ -1,5 +1,5 @@
 # HKGM
-**Paper**: One-shot Generative Prior Learned from Hankel-k-space for Parallel Imaging Reconstruction https://arxiv.org/abs/2208.07181
+**Paper**: One-shot Generative Prior in Hankel-k-space for Parallel Imaging Reconstruction https://arxiv.org/abs/2208.07181
 
 **Authors**: Hong Peng, Chen Jiang, Yu Guan, Jing Cheng, Minghui Zhang, Dong Liang, Senior Member, IEEE, Qiegen Liu, Senior Member, IEEE
 
