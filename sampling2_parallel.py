@@ -441,7 +441,7 @@ def get_pc_sampler(sde, shape, predictor, corrector, inverse_scaler, snr,
       x3 = x_mean    
       max_psnr = 0
       max_ssim = 0
-      for i in range(1):
+      for i in range(sde.N):
         print('======== ',i)
         t = timesteps[i]
         vec_t = torch.ones(shape[0], device=t.device) * t
