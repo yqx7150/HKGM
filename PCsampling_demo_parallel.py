@@ -66,14 +66,15 @@ def get_data_inverse_scaler(config):
   else:
     return lambda x: x
 
-# @title Load the score-based model
+
+# @title Load the HKGM model
 sde = 'VESDE' 
 if sde.lower() == 'vesde':
   from configs.ve import SIAT_kdata_ncsnpp_test as configs  
   model_num = 'checkpoint.pth'
   ckpt_filename ='./exp/checkpoints/checkpoint_15.pth'  
   config = configs.get_config()  
-  sde = VESDE(sigma_min=config.model.sigma_min, sigma_max=config.model.sigma_max, N=config.model.num_scales) ###################################  sde
+  sde = VESDE(sigma_min=config.model.sigma_min, sigma_max=config.model.sigma_max, N=config.model.num_scales) 
   sampling_eps = 1e-5
 
 
@@ -96,7 +97,7 @@ state = dict(step=0, optimizer=optimizer,
 state = restore_checkpoint(ckpt_filename, state, config.device)
 ema.copy_to(score_model.parameters())
 
-#@title PC sampling
+#@title reconstruction
 img_size = config.data.image_size
 channels = config.data.num_channels
 shape = (batch_size, channels, img_size, img_size)
@@ -112,3 +113,4 @@ sampling_fn = sampling2_parallel.get_pc_sampler(sde, shape, predictor, corrector
                                       eps=sampling_eps, device=config.device)
 
 x= sampling_fn(score_model)
+

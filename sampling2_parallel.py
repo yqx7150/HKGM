@@ -441,7 +441,7 @@ def get_pc_sampler(sde, shape, predictor, corrector, inverse_scaler, snr,
       x3 = x_mean    
       max_psnr = 0
       max_ssim = 0
-      for i in range(sde.N):
+      for i in range(1):
         print('======== ',i)
         t = timesteps[i]
         vec_t = torch.ones(shape[0], device=t.device) * t
@@ -547,5 +547,5 @@ def get_pc_sampler(sde, shape, predictor, corrector, inverse_scaler, snr,
           write_Data('checkpoint',max_psnr,ssim) 
           write_images(abs(rec_Image_sos),osp.join('./result/parallel_12ch/'+'Rec'+'.png'))
           io.savemat(osp.join('./result/parallel_12ch/'+'HKGM.mat'),{'HKGM':rec_Image})
-      return x_mean 
+      return rec_Image_sos 
   return pc_sampler
