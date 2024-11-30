@@ -47,6 +47,9 @@ The pipeline of the PI reconstruction procedure in HKGM. The iterative reconstru
 The implementation is based on this repository: https://github.com/yang-song/score_sde_pytorch.
 
 ## Other Related Projects
+
+<div align="center"><img src="https://github.com/yqx7150/HKGM/blob/main/PPT/All-MRI.png" >  </div>
+
   * Diffusion Models for Medical Imaging
 [<font size=5>**[Paper]**</font>](https://github.com/yqx7150/Diffusion-Models-for-Medical-Imaging)   [<font size=5>**[Code]**</font>](https://github.com/yqx7150/Diffusion-Models-for-Medical-Imaging)   [<font size=5>**[PPT]**</font>](https://github.com/yqx7150/HKGM/tree/main/PPT)  
   * Homotopic Gradients of Generative Density Priors for MR Image Reconstruction  
